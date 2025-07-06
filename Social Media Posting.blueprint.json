@@ -1,0 +1,888 @@
+{
+    "name": "Social Media Posting",
+    "flow": [
+        {
+            "id": 1,
+            "module": "google-drive:watchFilesInAFolder",
+            "version": 4,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 450
+                },
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "File ID"
+                    },
+                    {
+                        "name": "name",
+                        "type": "text",
+                        "label": "Name"
+                    },
+                    {
+                        "name": "mimeType",
+                        "type": "text",
+                        "label": "Mime Type"
+                    },
+                    {
+                        "name": "kind",
+                        "type": "text",
+                        "label": "Kind"
+                    },
+                    {
+                        "name": "starred",
+                        "type": "boolean",
+                        "label": "Starred"
+                    },
+                    {
+                        "name": "trashed",
+                        "type": "boolean",
+                        "label": "Trashed"
+                    },
+                    {
+                        "name": "explicitlyTrashed",
+                        "type": "boolean",
+                        "label": "Explicitly Trashed"
+                    },
+                    {
+                        "name": "parents",
+                        "type": "array",
+                        "label": "Parents"
+                    },
+                    {
+                        "name": "spaces",
+                        "type": "array",
+                        "label": "Spaces"
+                    },
+                    {
+                        "name": "version",
+                        "type": "number",
+                        "label": "Version"
+                    },
+                    {
+                        "name": "webViewLink",
+                        "type": "url",
+                        "label": "Web View Link"
+                    },
+                    {
+                        "name": "iconLink",
+                        "type": "url",
+                        "label": "Icon Link"
+                    },
+                    {
+                        "name": "hasThumbnail",
+                        "type": "boolean",
+                        "label": "Thumbnail"
+                    },
+                    {
+                        "name": "thumbnailLink",
+                        "type": "url",
+                        "label": "Thumbnail Link"
+                    },
+                    {
+                        "name": "thumbnailVersion",
+                        "type": "number",
+                        "label": "Thumbnail Version"
+                    },
+                    {
+                        "name": "viewedByMe",
+                        "type": "boolean",
+                        "label": "Viewed By Me"
+                    },
+                    {
+                        "name": "viewedByMeTime",
+                        "type": "date",
+                        "label": "Viewed By Me Time"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "modifiedTime",
+                        "time": true,
+                        "type": "date",
+                        "label": "Modified Time"
+                    },
+                    {
+                        "name": "modifiedByMeTime",
+                        "time": true,
+                        "type": "date",
+                        "label": "Modified By Me Time"
+                    },
+                    {
+                        "name": "modifiedByMe",
+                        "type": "boolean",
+                        "label": "Modified By Me"
+                    },
+                    {
+                        "name": "owners",
+                        "spec": [
+                            {
+                                "name": "kind",
+                                "type": "text",
+                                "label": "Kind"
+                            },
+                            {
+                                "name": "displayName",
+                                "type": "text",
+                                "label": "Display Name"
+                            },
+                            {
+                                "name": "photoLink",
+                                "type": "url",
+                                "label": "Photo Link"
+                            },
+                            {
+                                "name": "me",
+                                "type": "boolean",
+                                "label": "Me"
+                            },
+                            {
+                                "name": "permissionId",
+                                "type": "text",
+                                "label": "Permission ID"
+                            },
+                            {
+                                "name": "emailAddress",
+                                "type": "email",
+                                "label": "Email Address"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Owners"
+                    },
+                    {
+                        "name": "lastModifyingUser",
+                        "spec": [
+                            {
+                                "name": "kind",
+                                "type": "text",
+                                "label": "Kind"
+                            },
+                            {
+                                "name": "displayName",
+                                "type": "text",
+                                "label": "Display Name"
+                            },
+                            {
+                                "name": "photoLink",
+                                "type": "url",
+                                "label": "Photo Link"
+                            },
+                            {
+                                "name": "me",
+                                "type": "boolean",
+                                "label": "Me"
+                            },
+                            {
+                                "name": "permissionId",
+                                "type": "text",
+                                "label": "Permission ID"
+                            },
+                            {
+                                "name": "emailAddress",
+                                "type": "email",
+                                "label": "Email Address"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Last Modifying User"
+                    },
+                    {
+                        "name": "shared",
+                        "type": "boolean",
+                        "label": "Shared"
+                    },
+                    {
+                        "name": "ownedByMe",
+                        "type": "boolean",
+                        "label": "Owned By Me"
+                    },
+                    {
+                        "name": "capabilities",
+                        "spec": [
+                            {
+                                "name": "canAddChildren",
+                                "type": "boolean",
+                                "label": "Can Add Children"
+                            },
+                            {
+                                "name": "canAddMyDriveParent",
+                                "type": "boolean",
+                                "label": "Can Add My Drive Parent"
+                            },
+                            {
+                                "name": "canChangeCopyRequiresWriterPermission",
+                                "type": "boolean",
+                                "label": "Can Change Copy Requires Writer Permission"
+                            },
+                            {
+                                "name": "canChangeViewersCanCopyContent",
+                                "type": "boolean",
+                                "label": "Can Change Viewers Can Copy Content"
+                            },
+                            {
+                                "name": "canComment",
+                                "type": "boolean",
+                                "label": "Can Comment"
+                            },
+                            {
+                                "name": "canCopy",
+                                "type": "boolean",
+                                "label": "Can Copy"
+                            },
+                            {
+                                "name": "canDelete",
+                                "type": "boolean",
+                                "label": "Can Delete"
+                            },
+                            {
+                                "name": "canDeleteChildren",
+                                "type": "boolean",
+                                "label": "Can Delete Children"
+                            },
+                            {
+                                "name": "canDownload",
+                                "type": "boolean",
+                                "label": "Can Download"
+                            },
+                            {
+                                "name": "canEdit",
+                                "type": "boolean",
+                                "label": "Can Edit"
+                            },
+                            {
+                                "name": "canListChildren",
+                                "type": "boolean",
+                                "label": "Can List Children"
+                            },
+                            {
+                                "name": "canModifyContent",
+                                "type": "boolean",
+                                "label": "Can Modify Content"
+                            },
+                            {
+                                "name": "canMoveChildrenOutOfTeamDrive",
+                                "type": "boolean",
+                                "label": "Can Move Children Out Of Team Drive"
+                            },
+                            {
+                                "name": "canMoveChildrenOutOfDrive",
+                                "type": "boolean",
+                                "label": "Can Move Children Out Of Drive"
+                            },
+                            {
+                                "name": "canMoveChildrenWithinTeamDrive",
+                                "type": "boolean",
+                                "label": "Can Move Children Within Team Drive"
+                            },
+                            {
+                                "name": "canMoveChildrenWithinDrive",
+                                "type": "boolean",
+                                "label": "Can Move Children Within Drive"
+                            },
+                            {
+                                "name": "canMoveTeamDriveItem",
+                                "type": "boolean",
+                                "label": "Can Move Team Drive Item"
+                            },
+                            {
+                                "name": "canMoveItemIntoTeamDrive",
+                                "type": "boolean",
+                                "label": "Can Move Item Into Team Drive"
+                            },
+                            {
+                                "name": "canMoveItemOutOfDrive",
+                                "type": "boolean",
+                                "label": "Can Move Item Out Of Drive"
+                            },
+                            {
+                                "name": "canMoveItemWithinDrive",
+                                "type": "boolean",
+                                "label": "Can Move Item Within Drive"
+                            },
+                            {
+                                "name": "canReadRevisions",
+                                "type": "boolean",
+                                "label": "Can Read Revisions"
+                            },
+                            {
+                                "name": "canReadTeamDrive",
+                                "type": "boolean",
+                                "label": "Can Read Team Drive"
+                            },
+                            {
+                                "name": "canReadDrive",
+                                "type": "boolean",
+                                "label": "Can Read Drive"
+                            },
+                            {
+                                "name": "canRemoveChildren",
+                                "type": "boolean",
+                                "label": "Can Remove Children"
+                            },
+                            {
+                                "name": "canRemoveMyDriveParent",
+                                "type": "boolean",
+                                "label": "Can Remove My Drive Parent"
+                            },
+                            {
+                                "name": "canRename",
+                                "type": "boolean",
+                                "label": "Can Rename"
+                            },
+                            {
+                                "name": "canShare",
+                                "type": "boolean",
+                                "label": "Can Share"
+                            },
+                            {
+                                "name": "canTrash",
+                                "type": "boolean",
+                                "label": "Can Trash"
+                            },
+                            {
+                                "name": "canTrashChildren",
+                                "type": "boolean",
+                                "label": "Can Trash Children"
+                            },
+                            {
+                                "name": "canUntrash",
+                                "type": "boolean",
+                                "label": "Can Untrash"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Capabilities"
+                    },
+                    {
+                        "name": "viewersCanCopyContent",
+                        "type": "boolean",
+                        "label": "Viewers Can Copy Content"
+                    },
+                    {
+                        "name": "copyRequiresWriterPermission",
+                        "type": "boolean",
+                        "label": "Copy Requires Writer Permission"
+                    },
+                    {
+                        "name": "writersCanShare",
+                        "type": "boolean",
+                        "label": "Writers Can Share"
+                    },
+                    {
+                        "name": "permissions",
+                        "spec": [
+                            {
+                                "name": "kind",
+                                "type": "text",
+                                "label": "Kind"
+                            },
+                            {
+                                "name": "id",
+                                "type": "text",
+                                "label": "Permission ID"
+                            },
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "role",
+                                "type": "text",
+                                "label": "Role"
+                            },
+                            {
+                                "name": "allowFileDiscovery",
+                                "type": "boolean",
+                                "label": "Allow File Discovery"
+                            },
+                            {
+                                "name": "emailAddress",
+                                "type": "email",
+                                "label": "Email Address"
+                            },
+                            {
+                                "name": "displayName",
+                                "type": "text",
+                                "label": "Display Name"
+                            },
+                            {
+                                "name": "photoLink",
+                                "type": "url",
+                                "label": "Photo Link"
+                            },
+                            {
+                                "name": "deleted",
+                                "type": "boolean",
+                                "label": "Deleted"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Permissions"
+                    },
+                    {
+                        "name": "permissionIds",
+                        "type": "array",
+                        "label": "Permission IDs"
+                    },
+                    {
+                        "name": "quotaBytesUsed",
+                        "type": "uinteger",
+                        "label": "Quota Bytes Used"
+                    },
+                    {
+                        "name": "isAppAuthorized",
+                        "type": "boolean",
+                        "label": "App Authorized"
+                    },
+                    {
+                        "name": "exportLinks",
+                        "spec": [
+                            {
+                                "name": "application/vnd.oasis.opendocument.text",
+                                "type": "url",
+                                "label": "application/vnd.oasis.opendocument.text"
+                            },
+                            {
+                                "name": "application/pdf",
+                                "type": "url",
+                                "label": "application/pdf"
+                            },
+                            {
+                                "name": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                                "type": "url",
+                                "label": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            },
+                            {
+                                "name": "text/plain",
+                                "type": "url",
+                                "label": "text/plain"
+                            },
+                            {
+                                "name": "application/rtf",
+                                "type": "url",
+                                "label": "application/rtf"
+                            },
+                            {
+                                "name": "text/html",
+                                "type": "url",
+                                "label": "text/html"
+                            },
+                            {
+                                "name": "application/epub+zip",
+                                "type": "url",
+                                "label": "application/epub+zip"
+                            },
+                            {
+                                "name": "application/zip",
+                                "type": "url",
+                                "label": "application/zip"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Export Links"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "openai-gpt-3:CreateCompletion",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 450,
+                    "messages": [
+                        {
+                            "category": "setup",
+                            "severity": "error",
+                            "message": "Value must not be empty."
+                        }
+                    ]
+                },
+                "interface": [
+                    {
+                        "name": "result",
+                        "type": "any",
+                        "label": "Result"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "object",
+                        "type": "text",
+                        "label": "Object"
+                    },
+                    {
+                        "name": "created",
+                        "type": "date",
+                        "label": "Created"
+                    },
+                    {
+                        "name": "model",
+                        "type": "text",
+                        "label": "Model"
+                    },
+                    "rpc://openai-gpt-3/1/interfaceIncludeAudioVariablesInCompletion",
+                    {
+                        "name": "usage",
+                        "spec": [
+                            {
+                                "name": "prompt_tokens",
+                                "type": "number",
+                                "label": "Prompt Tokens"
+                            },
+                            {
+                                "name": "completion_tokens",
+                                "type": "text",
+                                "label": "Completion Tokens"
+                            },
+                            {
+                                "name": "total_tokens",
+                                "type": "number",
+                                "label": "Total Tokens"
+                            },
+                            {
+                                "name": "prompt_tokens_details",
+                                "spec": [
+                                    {
+                                        "name": "cached_tokens",
+                                        "type": "uinteger",
+                                        "label": "Cached Tokens"
+                                    },
+                                    {
+                                        "name": "text_tokens",
+                                        "type": "uinteger",
+                                        "label": "Text Tokens"
+                                    },
+                                    {
+                                        "name": "image_tokens",
+                                        "type": "uinteger",
+                                        "label": "Image Tokens"
+                                    },
+                                    {
+                                        "name": "audio_tokens",
+                                        "type": "uinteger",
+                                        "label": "Audio Tokens"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Prompt Tokens Details"
+                            },
+                            {
+                                "name": "completion_tokens_details",
+                                "spec": [
+                                    {
+                                        "name": "reasoning_tokens",
+                                        "type": "uinteger",
+                                        "label": "Reasoning Tokens"
+                                    },
+                                    {
+                                        "name": "text_tokens",
+                                        "type": "uinteger",
+                                        "label": "Text Tokens"
+                                    },
+                                    {
+                                        "name": "audio_tokens",
+                                        "type": "uinteger",
+                                        "label": "Audio Tokens"
+                                    },
+                                    {
+                                        "name": "accepted_prediction_tokens",
+                                        "type": "uinteger",
+                                        "label": "Accepted Prediction Tokens"
+                                    },
+                                    {
+                                        "name": "rejected_prediction_tokens",
+                                        "type": "uinteger",
+                                        "label": "Rejected Prediction Tokens"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Completion Tokens Details"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Usage"
+                    },
+                    {
+                        "name": "service_tier",
+                        "type": "text",
+                        "label": "Service Tier"
+                    },
+                    {
+                        "name": "system_fingerprint",
+                        "type": "text",
+                        "label": "System Fingerprint"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "module": "telegram:SendPhoto",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 450
+                }
+            }
+        },
+        {
+            "id": 3,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 450
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 4,
+                            "module": "instagram-business:CreatePostPhoto",
+                            "version": 1,
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 1200,
+                                    "y": 0
+                                },
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Post ID"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 5,
+                            "module": "facebook-pages:CreatePostWithPhotos",
+                            "version": 6,
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 1200,
+                                    "y": 300
+                                },
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Post ID"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 6,
+                            "module": "linkedin:CreateCompanyImagePost",
+                            "version": 2,
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 1200,
+                                    "y": 600
+                                },
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Post ID"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 7,
+                            "module": "instagram-business:GetMedia",
+                            "version": 1,
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 1200,
+                                    "y": 900
+                                },
+                                "interface": [
+                                    {
+                                        "name": "caption",
+                                        "type": "text",
+                                        "label": "Caption"
+                                    },
+                                    {
+                                        "name": "comments_count",
+                                        "type": "number",
+                                        "label": "Comments count"
+                                    },
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Media ID"
+                                    },
+                                    {
+                                        "name": "ig_id",
+                                        "type": "text",
+                                        "label": "Instagram ID"
+                                    },
+                                    {
+                                        "name": "is_comment_enabled",
+                                        "type": "boolean",
+                                        "label": "Is comment enabled"
+                                    },
+                                    {
+                                        "name": "like_count",
+                                        "type": "number",
+                                        "label": "Like count"
+                                    },
+                                    {
+                                        "name": "media_type",
+                                        "type": "text",
+                                        "label": "Media type"
+                                    },
+                                    {
+                                        "name": "media_url",
+                                        "type": "url",
+                                        "label": "Media URL"
+                                    },
+                                    {
+                                        "name": "owner",
+                                        "spec": [
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "User ID"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Owner"
+                                    },
+                                    {
+                                        "name": "permalink",
+                                        "type": "text",
+                                        "label": "Permalink"
+                                    },
+                                    {
+                                        "name": "thumbnail_url",
+                                        "type": "url",
+                                        "label": "Thumbnail URL"
+                                    },
+                                    {
+                                        "name": "shortcode",
+                                        "type": "text",
+                                        "label": "Shortcode"
+                                    },
+                                    {
+                                        "name": "timestamp",
+                                        "type": "date",
+                                        "label": "Timestamp"
+                                    },
+                                    {
+                                        "name": "username",
+                                        "type": "text",
+                                        "label": "Username"
+                                    },
+                                    {
+                                        "name": "media_product_type",
+                                        "type": "text",
+                                        "label": "Media Product Type"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 8,
+                            "module": "facebook-pages:CreatePostWithPhotos",
+                            "version": 6,
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 1500,
+                                    "y": 900
+                                },
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Post ID"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 9,
+                            "module": "linkedin:CreateCompanyImagePost",
+                            "version": 2,
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 1800,
+                                    "y": 900
+                                },
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Post ID"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "us2.make.com",
+        "notes": []
+    }
+}
